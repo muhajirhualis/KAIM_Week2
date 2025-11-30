@@ -2,3 +2,4 @@ pandas
 google_play_scraper
 dotenv
 tqdm
+langdetect
