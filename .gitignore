@@ -1,9 +1,15 @@
-.venev/
+# Python Environment
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Jupyter Notebook Artifacts
+.ipynb_checkpoints/
+
+# Credentials and Sensitive Files
 .env
 
-data/
-*.csv
-
-__pycache__
-*.pyc
-
+# Operating System Files
+.DS_Store
+Thumbs.db
