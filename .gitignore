@@ -1,4 +1,4 @@
-.venev
+.venev/
 .env
 
 data/
@@ -6,3 +6,4 @@ data/
 
 __pycache__
 *.pyc
+
