@@ -3,3 +3,15 @@ google_play_scraper
 dotenv
 tqdm
 langdetect
+
+# Sentiment Analysis
+
+scikit-learn
+textblob
+transformers
+torch
+
+#  NLP
+nltk
+spacy
+gensim
