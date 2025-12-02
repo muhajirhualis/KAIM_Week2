@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # --- Import Configuration ---
-from config import DATA_PATHS 
+# from config import DATA_PATHS 
 
 # --- Import Modular Components ---
 from preprocessor import ReviewPreprocessor
@@ -11,11 +11,11 @@ from sentiment_analyzer import SentimentAnalyzer
 from thematic_analyzer import ThematicAnalyzer
 
 # Input: Output of Task 1 clean data
-CLEANED_INPUT_PATH = '../data/processed/reviews_processed.csv'
+CLEANED_INPUT_PATH = 'data/processed/reviews_processed.csv'
 # Output: Final results for Task 2
-FINAL_OUTPUT_PATH = '../data/processed/reviews_with_themes.csv' 
+FINAL_OUTPUT_PATH ='data/processed/reviews_final.csv'
 
-df = pd.read_csv('../data/processed/reviews_processed.csv')
+df = pd.read_csv('data/processed/reviews_processed.csv')
 df.head()
 
 def run_analysis_pipeline():
@@ -27,7 +27,9 @@ def run_analysis_pipeline():
     # 1. Load Data (Task 1 Output)
     try:
         # DataPreprocessor.load_data is assumed to handle the path successfully
-        df = ReviewPreprocessor.load_data(CLEANED_INPUT_PATH)
+        # df = ReviewPreprocessor.load_data(CLEANED_INPUT_PATH)
+        df = pd.read_csv(CLEANED_INPUT_PATH)
+        df.head()
     except FileNotFoundError as e:
         print(e)
         return
@@ -53,14 +55,14 @@ def run_analysis_pipeline():
     # Select and rename columns for the final file/database load
     output_df = df_final_analyzed[[
         'review_id', 
-        'review',             # Raw review text
+        'review_text',             # Raw review text
         'vader_sentiment',    # Sentiment label
         'vader_compound',     # Sentiment score
         'theme',              # Rule-based theme
         'rating',
         'bank_name'
     ]].rename(columns={
-        'review': 'review_text',
+
         'vader_sentiment': 'sentiment_label',
         'vader_compound': 'sentiment_score'
     })

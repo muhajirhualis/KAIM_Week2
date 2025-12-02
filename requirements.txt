@@ -15,3 +15,7 @@ torch
 nltk
 spacy
 gensim
+
+
+# Database
+psycopg2
