@@ -261,8 +261,8 @@ class ReviewPreprocessor:
         
         # 2. Handle (Remove) the duplicates
         # keep='first' keeps the first occurrence and removes subsequent duplicates
-        # self.df = self.df.drop_duplicates(subset=[column_to_check], keep='first')
-        # print(f"\nCleaned shape: {self.df.shape}")
+        self.df = self.df.drop_duplicates(subset=[column_to_check], keep='first')
+        print(f"\nCleaned shape: {self.df.shape}")
         
 
         # Store final stats after removal
