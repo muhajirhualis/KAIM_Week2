@@ -15,6 +15,7 @@ torch
 nltk
 spacy
 gensim
+wordcloud
 
 
 # Database
